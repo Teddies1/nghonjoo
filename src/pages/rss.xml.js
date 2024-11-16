@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config.js";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config.ts";
 import { getCollection } from "astro:content";
 
 export async function get(context) {
