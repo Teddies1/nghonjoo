@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import TimeLineElement from "../components/cv/TimeLine.astro";
 import createSlug from "../lib/createSlug"
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -13,41 +14,66 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Hon Joo</div>
-    <div class="text-3xl py-3 font-bold">Computer Science Undergraduate</div>
+    <div class="text-3xl py-3 font-bold">Computer Science Graduate</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        I am a 2025 computer science graduate from Nanyang Technological University. 
+        I have previously worked at Autodesk as a Software Engineer Intern, having gained exposure to React front-end and Golang/C# back-end software development. 
+        I have also previously worked at HP Inc. as a Data Science Intern, having gained working experience in Python and FastAPI.
       </text>
     </div>
   </div>
 
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Bachelors in Computing, Computer Science @ Nanyang Technological University"
+      subtitle="Aug 2021 - May 2025">
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Software Engineering Intern @ Autodesk"
+      subtitle="Jan 2025 - June 2025 | React, JavaScript, Go, C#, SQL"
+    >
+      Was part of the PSET Identity team handling Enterprise Single Sign-On. 
+    </TimeLineElement>
+    <TimeLineElement
+      title="Data Science Intern @ Hewlett Packard Inc."
+      subtitle="Aug 2023 - Dec 2023 | Python, FastAPI, SQL"
+    >
+      Was part of the Data Analytics team handling defect detection for manufactured HP products.
+    </TimeLineElement>
+  </div>
+
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My projects</div>
+    <div class="text-3xl w-full font-bold mb-2">Projects (Click to learn more!)</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Mini Compiler Application"
+    desc="Hobby project written in Flask to learn more about compilers and full-stack development. "
+    url="https://github.com/Teddies1/tiny-compiler-app"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Flight Delay Machine Learning"
+    desc="Machine learning pipeline project written in Python to identify airlines and airports with the longest flight delays and their reasons."
+    url="https://github.com/Teddies1/SC1015-Data-Science-Project"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Automate"
+    desc="Android application written in Java to let users find nearby carparks and amenities."
+    url="https://github.com/Teddies1/Software-Engineering-Project"
   />
 
   <div>
